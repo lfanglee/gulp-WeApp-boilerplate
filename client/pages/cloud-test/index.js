@@ -1,14 +1,14 @@
 import regeneratorRuntime from '../../lib/regenerator-runtime/runtime-module';
 
-/*<remove trigger="prod">*/
+/* <remove trigger="prod"> */
 import {
     test
-} from '../../lib/api-mock.js'
-/*</remove>*/
+} from '../../lib/api-mock';
+/* </remove> */
 
-/*<jdists trigger="prod">
+/* <jdists trigger="prod">
 import { test } from '../../lib/api';
-</jdists>*/
+</jdists> */
 
 Page({
     data: {
@@ -19,4 +19,4 @@ Page({
         const result = await test(1, 2);
         console.log(result);
     }
-})
+});

@@ -3,6 +3,6 @@ Page({
         motto: 'hello, world!',
     },
     onLoad() {
-        
+        // todo
     }
 });

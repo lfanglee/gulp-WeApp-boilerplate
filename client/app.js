@@ -1,10 +1,10 @@
 App({
-    onLaunch: function () {
+    onLaunch() {
         wx.cloud.init({
             env: 'fresh-weather-5bf15d',
             traceUser: true
         });
-        var logs = wx.getStorageSync('logs') || [];
+        const logs = wx.getStorageSync('logs') || [];
         logs.unshift(Date.now());
         wx.setStorageSync('logs', logs);
 

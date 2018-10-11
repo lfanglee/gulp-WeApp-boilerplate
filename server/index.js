@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 
-const {PORT} = require('../config.server.json');
+const { PORT } = require('../config.server.json');
 
 const test = require('./cloud-functions/test/').main;
 
