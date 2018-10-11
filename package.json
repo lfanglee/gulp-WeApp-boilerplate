@@ -1,8 +1,16 @@
 {
-  "name": "fresh-weather",
+  "name": "gulp-WeApp-boilerplate",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "基于Gulp的微信小程序开发脚手架",
+  "keywords": [
+    "gulp",
+    "gulpjs",
+    "WeApp",
+    "weapp",
+    "wexin",
+    "weChat",
+    "wxss"
+  ],
   "scripts": {
     "server": "nodemon ./server/index.js",
     "start": "gulp watch",
@@ -24,8 +32,12 @@
     ],
     "delay": "1000"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "lifang961021@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
   "devDependencies": {
     "ansi-colors": "^3.0.5",
     "babel-core": "^6.26.3",

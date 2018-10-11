@@ -1,7 +1,7 @@
 App({
     onLaunch() {
         wx.cloud.init({
-            env: 'fresh-weather-5bf15d',
+            env: '',
             traceUser: true
         });
         const logs = wx.getStorageSync('logs') || [];
@@ -10,7 +10,7 @@ App({
 
         wx.login({
             success: (res) => {
-
+                console.log(res);
             }
         });
 
