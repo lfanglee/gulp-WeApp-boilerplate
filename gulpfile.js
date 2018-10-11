@@ -100,23 +100,23 @@ gulp.task('json', () => {
         .pipe(gulp.dest(paths.dist.baseDir));
 });
 
-// 图片文件一定要放到imgages文件夹下
 gulp.task('images', () => {
-    return gulp.src(`${paths.src.imgSrc}/**`)
+    return gulp.src(`${paths.src.baseDir}/**/*.{jpg, jpeg, png, gif, svg}`)
         .pipe(plugins.newer(paths.dist.imgDest))
         .pipe(plugins.imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}]
         }))
-        .pipe(gulp.dest(paths.dist.imgDest));
+        .pipe(gulp.dest(paths.dist.baseDir));
 });
 
 gulp.task('wxs', () => {
     return gulp.src(`${paths.src.baseDir}/**/*.wxs`).pipe(gulp.dest(paths.dist.baseDir));
 });
 
-gulp.task('font', () => {
-    return gulp.src(`${paths.src.baseDir}/**/*.{eot, ttf, woff, svg, woff2}`).pipe(gulp.dest(paths.dist.baseDir));
+gulp.task('extras', () => {
+    return gulp.src([`${paths.src.baseDir}/**/*.*`, `!${paths.src.baseDir}/**/*.{js, wxml, wxss, scss, wxs, json, jpg, jpeg, png, gif, svg}`])
+        .pipe(gulp.dest(paths.dist.baseDir));
 });
 
 gulp.task('watch', () => {
@@ -180,11 +180,11 @@ gulp.task('clean', () => {
 });
 
 gulp.task('dev', ['clean'], () => {
-    runSequence('json', 'images', 'wxml', 'wxss', 'js', 'wxs', 'font', 'cloud', 'watch');
+    runSequence('json', 'images', 'wxml', 'wxss', 'js', 'wxs', 'extras', 'cloud', 'watch');
 });
 
 gulp.task('build', ['clean'], () => {
-    runSequence('json', 'images', 'wxml', 'wxss', 'js', 'wxs', 'font', 'cloud');
+    runSequence('json', 'images', 'wxml', 'wxss', 'js', 'wxs', 'extras', 'cloud');
 });
 
 gulp.task('cloud:dev', () => {

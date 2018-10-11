@@ -60,7 +60,5 @@
     "stream-combiner2": "^1.1.1",
     "through2": "^2.0.3"
   },
-  "dependencies": {
-    "regenerator": "^0.13.2"
-  }
+  "dependencies": {}
 }

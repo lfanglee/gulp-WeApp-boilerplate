@@ -1,3 +1,5 @@
+import regeneratorRuntime from '../../lib/regenerator-runtime/runtime-module';
+
 /*<remove trigger="prod">*/
 import {
     test
@@ -13,4 +15,8 @@ Page({
         answer: 3
         // answer: test(1, 2)
     },
+    async onLoad() {
+        const result = await test(1, 2);
+        console.log(result);
+    }
 })
