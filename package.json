@@ -1,7 +1,7 @@
 {
-  "name": "gulp-WeApp-boilerplate",
-  "version": "1.0.0",
-  "description": "基于Gulp的微信小程序开发脚手架",
+  "name": "{{projectName}}",
+  "version": "{{projectVersion}}",
+  "description": "{{description}}",
   "keywords": [
     "gulp",
     "gulpjs",
