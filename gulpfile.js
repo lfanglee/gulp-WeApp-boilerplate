@@ -38,7 +38,7 @@ const handleError = (err) => {
     log('lineNumber: ' + colors.red(err.lineNumber || JSON.stringify(err.loc)));
     log('message: ' + err.message);
     log('plugin: ' + colors.yellow(err.plugin));
-}
+};
 
 gulp.task('wxml', () => {
     return gulp
@@ -59,14 +59,14 @@ gulp.task('wxss', () => {
         plugins.postcss([pxtorpx(), base64()]),
         isProd ? plugins.cssnano({
             autoprefixer: false,
-            discardComments: {removeAll: true}
+            discardComments: { removeAll: true }
         }) : through.obj(),
         plugins.rename((path) => (path.extname = '.wxss')),
         gulp.dest(paths.dist.baseDir)
     ]);
 
     combined.on('error', handleError);
-    
+
     return combined;
 });
 
@@ -105,7 +105,7 @@ gulp.task('images', () => {
         .pipe(plugins.newer(paths.dist.imgDest))
         .pipe(plugins.imagemin({
             progressive: true,
-            svgoPlugins: [{removeViewBox: false}]
+            svgoPlugins: [{ removeViewBox: false }]
         }))
         .pipe(gulp.dest(paths.dist.baseDir));
 });
@@ -124,12 +124,12 @@ gulp.task('watch', () => {
         const extname = path.extname(filePath).slice(1);
         if (['wxml', 'wxss', 'js', 'json', 'wxs'].includes(extname)) {
             runSequence(extname);
-        } else if (['eot', 'ttf', 'woff', 'svg', 'woff2'].includes(extname)) {
-            runSequence('font');
         } else if (extname === 'scss') {
             runSequence('wxss');
-        } else {
+        } else if (['jpg', 'jpeg', 'png', 'gif', 'svg'].includes(extname)) {
             runSequence('images');
+        } else {
+            runSequence('extras');
         }
     };
 
