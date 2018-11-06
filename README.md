@@ -1,4 +1,4 @@
-# gulp-weapp-cli
+# gulp-weapp-boilerplate
 
 > 基于gulp的快速构建微信小程序的脚手架
 
