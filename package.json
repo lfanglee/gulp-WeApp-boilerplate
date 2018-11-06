@@ -1,7 +1,7 @@
 {
-  "name": "gulp-weapp-boilerplate",
-  "version": "1.0.0",
-  "description": "a boilerplate for building weapp",
+  "name": "{{projectName}}",
+  "version": "{{projectVersion}}",
+  "description": "{{description}}",
   "keywords": [
     "gulp",
     "gulpjs",
@@ -32,12 +32,10 @@
     ],
     "delay": "1000"
   },
-  "author": "lifang961021@gmail.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kindboy/gulp-WeApp-boilerplate"
+    "url": ""
   },
-  "license": "MIT",
   "devDependencies": {
     "ansi-colors": "^3.0.5",
     "babel-core": "^6.26.3",
