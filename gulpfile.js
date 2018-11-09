@@ -101,9 +101,9 @@ gulp.task('json', () => {
 });
 
 gulp.task('images', () => {
-    return gulp.src(`${paths.src.baseDir}/**/*.{jpg, jpeg, png, gif, svg}`)
+    return gulp.src(`${paths.src.baseDir}/**/*.{jpg,jpeg,png,gif,svg}`)
         .pipe(plugins.newer(paths.dist.imgDest))
-        .pipe(plugins.imagemin({
+        .pipe(plugins.imagemin(
             progressive: true,
             svgoPlugins: [{ removeViewBox: false }]
         }))
@@ -115,7 +115,7 @@ gulp.task('wxs', () => {
 });
 
 gulp.task('extras', () => {
-    return gulp.src([`${paths.src.baseDir}/**/*.*`, `!${paths.src.baseDir}/**/*.{js, wxml, wxss, scss, wxs, json, jpg, jpeg, png, gif, svg}`])
+    return gulp.src([`${paths.src.baseDir}/**/*.*`, `!${paths.src.baseDir}/**/*.{js,wxml,wxss,scss,wxs,json,jpg,jpeg,png,gif,svg}`])
         .pipe(gulp.dest(paths.dist.baseDir));
 });
 
