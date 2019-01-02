@@ -99,7 +99,8 @@
             }
         ],
         "no-shadow": "off",
-        "arrow-parens": "off"
+        "arrow-parens": "off",
+        "no-param-reassign": "off"
     },
     "globals": {
         "App": true,

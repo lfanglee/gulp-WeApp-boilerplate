@@ -1,5 +1,22 @@
+import initPage from './lib/initPage';
+import lifecycle from './mixins/lifecycle';
+import utils from './mixins/utils';
+
 App({
     onLaunch() {
+        // init Page
+        const nativePage = Page;
+        Page = options => {
+            const { mixins } = options;
+            if (Array.isArray(mixins)) {
+                Reflect.deleteProperty(options, 'mixins');
+                options = initPage([...mixins, lifecycle, utils], options);
+            } else {
+                options = initPage([lifecycle, utils], options);
+            }
+            nativePage(options);
+        };
+
         wx.cloud.init({
             env: '',
             traceUser: true

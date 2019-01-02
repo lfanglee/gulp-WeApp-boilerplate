@@ -103,7 +103,7 @@ gulp.task('json', () => {
 gulp.task('images', () => {
     return gulp.src(`${paths.src.baseDir}/**/*.{jpg,jpeg,png,gif,svg}`)
         .pipe(plugins.newer(paths.dist.imgDest))
-        .pipe(plugins.imagemin(
+        .pipe(plugins.imagemin({
             progressive: true,
             svgoPlugins: [{ removeViewBox: false }]
         }))
