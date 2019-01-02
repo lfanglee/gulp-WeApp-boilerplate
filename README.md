@@ -4,6 +4,8 @@
 
 ## 特性
 
+* 实现Vue框架的computed和watch方法，开发更便捷
+* 实现Vue框架的mixins功能，更方便公共方法和公共逻辑的复用
 * sass编写样式，替代wxss
 * webfont自动base64转换，解决了微信小程序无法引用本地字体的问题
 * 采用es6语法开发，babel编译
@@ -49,6 +51,8 @@ $ npm run server
 │   │   │  └── package.json
 │   │   ├── api-mock.js             // api-mock 功能
 │   │   ├── api.js                  // 实际 api
+│   │   ├── initPage.js             // 页面初始化方法，实现了vue的mixins功能
+│   │   ├── vuefy.js                // 实现vue的 computed 和 watch 功能
 │   │   └── util.js
 │   └── pages
 │       └── index
